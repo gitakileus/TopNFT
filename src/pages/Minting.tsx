@@ -164,7 +164,7 @@ const Minting = () => {
     const contract = new ethers.Contract(
       contractAddress,
       contractAbi.abi,
-      provider
+      provider.getSigner()
     );
 
     const verify = await getWhiteListInfo(window.ethereum.selectedAddress);
@@ -197,7 +197,7 @@ const Minting = () => {
 
   return (
     <div className="bg-gradient-to-b from-[#011A46] to-[#0D0347] h-auto xl:h-screen pb-max flex justify-center">
-      <ToastContainer theme="dark"/>
+      <ToastContainer theme="dark" />
       <div className="pt-[156px] pb-[55px] mx-auto text-[#fff]">
         <div className="flex justify-center w-full">
           <img
